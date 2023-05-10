@@ -1,0 +1,27 @@
+name: DLNLP-final
+
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - numpy
+    - scipy
+    - pandas
+    - scikit-learn
+    - matplotlib
+    - seaborn
+    - wordcloud
+    - langdetect
+    - datetime
+    - tensorflow
+    - keras
+    - tqdm
+    - nltk
+    - better_profanity
+    - emoji
+    - gingerit
+    - pycountry
+    - spyder-kernels
+    - keras-applications
+    - keras-preprocessing
+    - transformers
