@@ -69,6 +69,7 @@ The repository is organized as follows:
 
 ```
 |-- main.py
+|-- glove.6B.300d.txt (download separately)
 |-- Data_Preprocessing
 | |-- ...
 |-- Baseline_Model
