@@ -67,6 +67,7 @@ Before running the code, make sure to download the required GloVe embeddings fil
 
 The repository is organized as follows:
 
+```
 |-- main.py
 |-- Data_Preprocessing
 | |-- ...
@@ -84,3 +85,4 @@ The repository is organized as follows:
 |-- Deep_Learning_Models
 | |-- ...
 | |-- glove.6B.300d.txt (download separately)
+```
