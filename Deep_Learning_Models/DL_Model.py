@@ -168,7 +168,7 @@ def train_glove_lstm_model(train_data, test_data):
 
     # Plot the ROC curve
     plt.figure()
-    plt.plot(fpr, tpr, label=f"GloVe Simple RNN (AUC = {roc_auc:.2f})")
+    plt.plot(fpr, tpr, label=f"GloVe LSTM (AUC = {roc_auc:.2f})")
     plt.plot([0, 1], [0, 1], 'k--')
     plt.xlim([0.0, 1.0])
     plt.ylim([0.0, 1.05])

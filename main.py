@@ -23,8 +23,8 @@ import Final_Evaluation as fe
 
 # Perform Data EDA
 Dataset_path = 'Dataset/'
-# train_data, val_data, test_data = de.load_dataset(Dataset_path)
-# cross_tab = de.perform_eda(train_data, val_data, test_data)
+train_data, val_data, test_data = de.load_dataset(Dataset_path)
+cross_tab = de.perform_eda(train_data, val_data, test_data)
 
 # # Evaluate Machine Learning Algorithms
 bm.run_evaluation(Dataset_path)

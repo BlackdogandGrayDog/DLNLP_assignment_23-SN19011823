@@ -173,12 +173,13 @@ def create_bert_classification_model_GRU(model_name, num_labels):
     # Pass input through the base BERT model
     bert_output = base_bert_model([input_ids, attention_mask])[0]
     
-    # Add a Bidirectional LSTM layer
-    lstm_output = Bidirectional(LSTM(128, return_sequences=True))(bert_output)
-    
     # Add a Bidirectional GRU layer
-    gru_output = Bidirectional(GRU(128, return_sequences=True))(lstm_output)
-    flattened_output = tf.keras.layers.Flatten()(gru_output)
+    gru_output = Bidirectional(GRU(128, return_sequences=True))(bert_output)
+    
+    # Add a Bidirectional LSTM layer
+    lstm_output = Bidirectional(LSTM(128, return_sequences=True))(gru_output)
+    
+    flattened_output = tf.keras.layers.Flatten()(lstm_output)
     dense_layer1 = Dense(512, activation='relu')(flattened_output)
     dense_layer2 = Dense(128, activation='relu')(dense_layer1)
     dense_layer3 = Dense(64, activation='relu')(dense_layer2)
@@ -204,14 +205,14 @@ def create_bert_classification_model_GRU_with_attention(model_name, num_labels):
     # Pass input through the base BERT model
     bert_output = base_bert_model([input_ids, attention_mask])[0]
     
-    # Add a Bidirectional LSTM layer
-    lstm_output = Bidirectional(LSTM(128, return_sequences=True))(bert_output)
-    
     # Add a Bidirectional GRU layer
-    gru_output = Bidirectional(GRU(128, return_sequences=True))(lstm_output)
+    gru_output = Bidirectional(GRU(128, return_sequences=True))(bert_output)
+    
+    # Add a Bidirectional LSTM layer
+    lstm_output = Bidirectional(LSTM(128, return_sequences=True))(gru_output)
     
     # Add an AttentionWeightedAverage layer
-    attention_output = dl.AttentionWeightedAverage()(gru_output)
+    attention_output = dl.AttentionWeightedAverage()(lstm_output)
     
     flattened_output = tf.keras.layers.Flatten()(attention_output)
     dense_layer1 = Dense(512, activation='relu')(flattened_output)

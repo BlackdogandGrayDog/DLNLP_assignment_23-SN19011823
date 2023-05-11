@@ -63,6 +63,8 @@ The dataset used in this project is provided by the competition. You can access 
 
 Before running the code, make sure to download the required GloVe embeddings file, `glove.6B.300d.txt`, from this link: [https://nlp.stanford.edu/data/glove.6B.zip](https://nlp.stanford.edu/data/glove.6B.zip). Due to size limitations, the file has not been uploaded to the repository. Place the downloaded `glove.6B.300d.txt` file in the same directory as the `main.py` file. If you plan to run separate files, copy the `glove.6B.300d.txt` file into the `Baseline_Model` and `Deep_Learning_Models` folders.
 
+Also, please ensure downloading all datasets and placed in to Dataset Folder.
+
 ### Directory Structure
 
 The repository is organized as follows:
